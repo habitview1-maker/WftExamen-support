@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WftExamen — Support, Privacybeleid & Voorwaarden</title>
+    <style>
+        :root {
+            --primary: #0F2942;
+            --primary-light: #1E4976;
+            --accent: #0284C7;
+            --accent-hover: #0369A1;
+            --success: #059669;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --border: #E2E8F0;
+            --badge-bg: #E0F2FE;
+            --badge-text: #0369A1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #FFFFFF;
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            padding: 4px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: #FFFFFF;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #E0F2FE;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #CBD5E1;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sticky Navigation */
+        .nav-bar {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.45rem 1rem;
+            border-radius: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--badge-bg);
+            color: var(--accent);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 860px;
+            margin: -2rem auto 4rem;
+            padding: 0 1.25rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 4px 16px rgba(15, 41, 66, 0.04);
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--primary-light);
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin: 0.5rem 0 1.25rem 1.25rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        li strong {
+            color: var(--text-main);
+        }
+
+        /* Contact Box */
+        .contact-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: #F0F9FF;
+            border: 1px solid #BAE6FD;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .contact-info span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.35rem;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-email:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Pricing Table */
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .tier-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.1rem;
+            background: var(--bg);
+        }
+
+        .tier-item h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .tier-price {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .tier-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* FAQ Item */
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
+        }
+
+        .faq-a {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 3rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .btn-email {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="lang-switcher" role="group" aria-label="Language switcher">
+                <button id="btn-nl" class="lang-btn active" onclick="setLanguage('nl')">🇳🇱 Nederlands</button>
+                <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+            </div>
+            <div>
+                <span class="app-badge">Wft Basis &amp; Wft Schade Particulier</span>
+            </div>
+            <h1>WftExamen</h1>
+            <p id="hero-sub-nl">Officiële Supportpagina, Privacybeleid en Gebruiksvoorwaarden (EULA)</p>
+            <p id="hero-sub-en" class="hidden">Official Support Center, Privacy Policy &amp; Terms of Use (EULA)</p>
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <div class="nav-inner" id="nav-nl">
+            <a href="#support-nl" class="nav-link">Klantenservice &amp; FAQ</a>
+            <a href="#privacy-nl" class="nav-link">Privacybeleid</a>
+            <a href="#terms-nl" class="nav-link">Gebruiksvoorwaarden</a>
+        </div>
+        <div class="nav-inner hidden" id="nav-en">
+            <a href="#support-en" class="nav-link">Support &amp; FAQ</a>
+            <a href="#privacy-en" class="nav-link">Privacy Policy</a>
+            <a href="#terms-en" class="nav-link">Terms of Use (EULA)</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ================= DUTCH (NL) CONTENT ================= -->
+        <div id="content-nl">
+            <!-- 1. SUPPORT & CONTACT -->
+            <section id="support-nl" class="card">
+                <span class="section-tag">Support &amp; Contact</span>
+                <h2>Hulp nodig bij WftExamen?</h2>
+                <p>WftExamen is ontwikkeld om kandidaten optimaal voor te bereiden op de examens <strong>Wft Basis</strong> en <strong>Wft Schade Particulier</strong> (conform de CDFD-toetstermen). Heb je een vraag over de app, een inhoudelijke opmerking over een oefenvraag of hulp nodig met je aankoop? Neem gerust contact met ons op.</p>
+
+                <div class="contact-box">
+                    <div class="contact-info">
+                        <strong>Directe E-mailsupport</strong>
+                        <span>Reactietijd: doorgaans binnen 24 uur op werkdagen</span>
+                    </div>
+                    <a href="mailto:habitview1@gmail.com?subject=WftExamen%20Support" class="btn-email">
+                        ✉️ habitview1@gmail.com
+                    </a>
+                </div>
+
+                <h3>Veelgestelde Vragen (FAQ)</h3>
+                <div class="faq-item">
+                    <p class="faq-q">1. Hoe herstel ik mijn eerdere aankoop (Restore Purchases) op een nieuw toestel?</p>
+                    <p class="faq-a">Open de WftExamen-app, ga naar het tabblad <strong>Instellingen</strong> (of het Premium-scherm) en tik op <strong>"Aankopen herstellen"</strong>. Zorg dat je bent ingelogd met hetzelfde Apple ID waarmee de oorspronkelijke aankoop is gedaan.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">2. Hoe kan ik mijn abonnement opzeggen of beheren?</p>
+                    <p class="faq-a">Alle betalingen en abonnementen worden veilig verwerkt via Apple. Ga op je iPhone of iPad naar <strong>Instellingen &gt; [Jouw Naam] &gt; Abonnementen</strong>, selecteer <strong>WftExamen</strong> en kies daar voor wijzigen of opzeggen. Doe dit minimaal 24 uur vóór het einde van de lopende periode.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">3. Werkt de app volledig offline?</p>
+                    <p class="faq-a">Ja! Alle oefenvragen, proefexamens, uitleg en je studievoortgang zijn lokaal en versleuteld op je toestel opgeslagen. Je hebt geen internetverbinding nodig om te oefenen.</p>
+                </div>
+            </section>
+
+            <!-- 2. PRIVACY POLICY (NL) -->
+            <section id="privacy-nl" class="card">
+                <span class="section-tag">Privacyverklaring (AVG / GDPR)</span>
+                <h2>Privacybeleid</h2>
+                <p><strong>Laatst bijgewerkt:</strong> 25 oktober 2026</p>
+                <p>Bij <strong>WftExamen</strong> hechten wij het hoogste belang aan jouw privacy. Onze app is ontworpen volgens het <em>Offline-First</em> en <em>Privacy-by-Design</em> principe. Je kunt de app gebruiken zonder een account aan te maken en zonder persoonlijke gegevens zoals je naam, adres of telefoonnummer in te voeren.</p>
+
+                <h3>1. Welke gegevens worden verwerkt?</h3>
+                <ul>
+                    <li><strong>Lokale Studievoortgang &amp; Favorieten:</strong> Je behaalde testresultaten, gemarkeerde favoriete vragen en oefentijd worden uitsluitend lokaal op je eigen apparaat opgeslagen via Apple's standaard opslag (<code>UserDefaults</code>).</li>
+                    <li><strong>Anonieme Productinteractie:</strong> Om de stabiliteit en functionaliteit van de app te waarborgen, worden basale gebruiksstatistieken (zoals het aantal voltooide oefentests) anoniem bijgehouden. Deze gegevens zijn niet gekoppeld aan je identiteit.</li>
+                    <li><strong>Geen Tracking:</strong> WftExamen maakt <strong>geen</strong> gebruik van advertentietrackers, verkoopt nooit gegevens aan derden en volgt je niet over apps of websites van andere bedrijven heen.</li>
+                </ul>
+
+                <h3>2. In-App Aankopen (Apple StoreKit)</h3>
+                <p>Financiële transacties voor Premium-toegang worden rechtstreeks en volledig afgehandeld door Apple via de officiële App Store (StoreKit 2). Wij hebben op geen enkel moment inzage in of toegang tot jouw bankrekeningnummer, creditcardgegevens of factuuradres.</p>
+
+                <h3>3. Gegevens verwijderen</h3>
+                <p>Omdat jouw studiegegevens lokaal op je apparaat staan, heb je hier zelf de volledige controle over. Je kunt je voortgang op elk moment wissen via de app-instellingen of door de WftExamen-app van je toestel te verwijderen.</p>
+
+                <h3>4. Contact over Privacy</h3>
+                <p>Voor vragen over dit privacybeleid kun je altijd contact opnemen met de ontwikkelaar (Mehmet Ali Ünalan) via <a href="mailto:habitview1@gmail.com">habitview1@gmail.com</a>.</p>
+            </section>
+
+            <!-- 3. TERMS OF USE / EULA (NL) -->
+            <section id="terms-nl" class="card">
+                <span class="section-tag">Voorwaarden &amp; Abonnementen</span>
+                <h2>Gebruiksvoorwaarden (EULA)</h2>
+                <p><strong>Laatst bijgewerkt:</strong> 25 oktober 2026</p>
+                <p>Door het downloaden of gebruiken van de applicatie <strong>WftExamen</strong> ga je akkoord met deze gebruiksvoorwaarden en de standaard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Licensed Application End User License Agreement (EULA)</a>.</p>
+
+                <h3>1. Overzicht Premium Toegang &amp; Prijzen</h3>
+                <p>WftExamen biedt gratis toegang tot de eerste oefentest om kennis te maken met de app. Voor volledige toegang tot alle 10 categorieën, 500+ vragen en realistische Wft-proefexamens zijn de volgende pakketten beschikbaar:</p>
+
+                <div class="tier-grid">
+                    <div class="tier-item">
+                        <h4>1 Maand Toegang</h4>
+                        <div class="tier-price">€ 9,99</div>
+                        <p class="tier-desc">Automatisch verlengend maandelijks abonnement.</p>
+                    </div>
+                    <div class="tier-item">
+                        <h4>3 Maanden Toegang</h4>
+                        <div class="tier-price">€ 19,99</div>
+                        <p class="tier-desc">Automatisch verlengend kwartaalabonnement.</p>
+                    </div>
+                    <div class="tier-item">
+                        <h4>Levenslange Toegang</h4>
+                        <div class="tier-price">€ 29,99</div>
+                        <p class="tier-desc">Eenmalige aankoop (Non-Consumable), geen automatische verlenging.</p>
+                    </div>
+                </div>
+
+                <h3>2. Voorwaarden voor Automatisch Verlengende Abonnementen</h3>
+                <ul>
+                    <li>De betaling wordt bij bevestiging van de aankoop in rekening gebracht op je Apple ID-account.</li>
+                    <li>Een abonnement (1 maand of 3 maanden) wordt automatisch verlengd, tenzij automatisch verlengen ten minste <strong>24 uur vóór het einde van de huidige periode</strong> wordt uitgeschakeld.</li>
+                    <li>Je account wordt binnen 24 uur vóór het einde van de lopende periode belast voor de verlenging tegen het dan geldende tarief.</li>
+                    <li>Je kunt je abonnementen na aankoop zelf beheren en automatische verlenging uitschakelen via je <strong>Accountinstellingen in de App Store</strong>.</li>
+                </ul>
+
+                <h3>3. Educatieve Disclaimer &amp; Intellectueel Eigendom</h3>
+                <p>WftExamen is een onafhankelijk educatief hulpmiddel en is niet gelieerd aan DUO, het CDFD, de AFM of DNB. Hoewel het studiemateriaal met de grootst mogelijke zorgvuldigheid is samengesteld op basis van de actuele Wft-toetstermen, kunnen er geen rechten worden ontleend aan de resultaten van oefenexamens. Alle teksten, oefenvragen en broncode zijn auteursrechtelijk beschermd.</p>
+            </section>
+        </div>
+
+        <!-- ================= ENGLISH (EN) CONTENT ================= -->
+        <div id="content-en" class="hidden">
+            <!-- 1. SUPPORT & CONTACT (EN) -->
+            <section id="support-en" class="card">
+                <span class="section-tag">Support &amp; Contact</span>
+                <h2>Need Help with WftExamen?</h2>
+                <p>WftExamen is built to help candidates prepare thoroughly for the Dutch <strong>Wft Basis</strong> and <strong>Wft Schade Particulier</strong> certification exams (aligned with CDFD standards). If you have any questions about the app, feedback on practice questions, or need help with your purchase, please reach out to us.</p>
+
+                <div class="contact-box">
+                    <div class="contact-info">
+                        <strong>Direct Email Support</strong>
+                        <span>Response time: Usually within 24 hours on business days</span>
+                    </div>
+                    <a href="mailto:habitview1@gmail.com?subject=WftExamen%20Support" class="btn-email">
+                        ✉️ habitview1@gmail.com
+                    </a>
+                </div>
+
+                <h3>Frequently Asked Questions (FAQ)</h3>
+                <div class="faq-item">
+                    <p class="faq-q">1. How do I restore my previous purchases on a new device?</p>
+                    <p class="faq-a">Open the WftExamen app, navigate to the <strong>Settings (Instellingen)</strong> tab or the Premium screen, and tap <strong>"Restore Purchases" (Aankopen herstellen)</strong>. Make sure you are signed in with the same Apple ID used for the original purchase.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">2. How can I manage or cancel my subscription?</p>
+                    <p class="faq-a">All subscriptions are managed directly by Apple. On your iPhone or iPad, open <strong>Settings &gt; [Your Name] &gt; Subscriptions</strong>, select <strong>WftExamen</strong>, and cancel or modify your plan at least 24 hours before the renewal date.</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-q">3. Does the app work offline?</p>
+                    <p class="faq-a">Yes! All questions, mock exams, detailed explanations, and study analytics are stored locally and encrypted on your device. No internet connection is required to study.</p>
+                </div>
+            </section>
+
+            <!-- 2. PRIVACY POLICY (EN) -->
+            <section id="privacy-en" class="card">
+                <span class="section-tag">Privacy Policy (GDPR Compliant)</span>
+                <h2>Privacy Policy</h2>
+                <p><strong>Last Updated:</strong> October 25, 2026</p>
+                <p>At <strong>WftExamen</strong>, we take your privacy seriously. Our application is built on an <em>Offline-First</em> and <em>Privacy-by-Design</em> architecture. You can use all features of the app without creating an account or providing personal identifiers such as your name, email address, or phone number.</p>
+
+                <h3>1. Data We Collect &amp; Store Locally</h3>
+                <ul>
+                    <li><strong>Local Study Progress &amp; Favorites:</strong> Your exam scores, bookmarked questions, and study duration are stored strictly locally on your device using Apple's native <code>UserDefaults</code> storage.</li>
+                    <li><strong>Anonymous Product Interaction:</strong> Basic, non-identifiable interaction metrics (such as completed quiz counts) are processed locally to display your study progress. None of this data is linked to your identity.</li>
+                    <li><strong>Zero Tracking:</strong> WftExamen does <strong>not</strong> use third-party advertising SDKs, never sells user data, and never tracks you across third-party apps or websites.</li>
+                </ul>
+
+                <h3>2. In-App Purchases (Apple StoreKit 2)</h3>
+                <p>All payments and subscriptions are securely processed by Apple via the App Store (StoreKit 2). We never collect, view, or store your credit card details, bank account numbers, or billing information.</p>
+
+                <h3>3. Data Retention &amp; Deletion</h3>
+                <p>Because your study progress is stored locally on your device, you retain full control over your data. You can reset your statistics within the app or permanently delete all local data at any time by uninstalling WftExamen from your device.</p>
+
+                <h3>4. Contact Us</h3>
+                <p>If you have any questions regarding this Privacy Policy, please contact the developer (Mehmet Ali Ünalan) at <a href="mailto:habitview1@gmail.com">habitview1@gmail.com</a>.</p>
+            </section>
+
+            <!-- 3. TERMS OF USE / EULA (EN) -->
+            <section id="terms-en" class="card">
+                <span class="section-tag">Terms &amp; Subscriptions</span>
+                <h2>Terms of Use (EULA)</h2>
+                <p><strong>Last Updated:</strong> October 25, 2026</p>
+                <p>By downloading or using <strong>WftExamen</strong>, you agree to these Terms of Use as well as Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Licensed Application End User License Agreement (Standard EULA)</a>.</p>
+
+                <h3>1. Premium Access &amp; Pricing Tiers</h3>
+                <p>WftExamen offers free introductory access so users can evaluate the study environment. Full access to all 10 categories, 500+ practice questions, and weighted CDFD mock exams is available through the following options:</p>
+
+                <div class="tier-grid">
+                    <div class="tier-item">
+                        <h4>1 Month Access</h4>
+                        <div class="tier-price">€ 9.99</div>
+                        <p class="tier-desc">Auto-renewable monthly subscription.</p>
+                    </div>
+                    <div class="tier-item">
+                        <h4>3 Months Access</h4>
+                        <div class="tier-price">€ 19.99</div>
+                        <p class="tier-desc">Auto-renewable quarterly subscription.</p>
+                    </div>
+                    <div class="tier-item">
+                        <h4>Lifetime Access</h4>
+                        <div class="tier-price">€ 29.99</div>
+                        <p class="tier-desc">One-time purchase (Non-Consumable), never expires.</p>
+                    </div>
+                </div>
+
+                <h3>2. Auto-Renewable Subscription Terms</h3>
+                <ul>
+                    <li>Payment will be charged to your Apple ID account at confirmation of purchase.</li>
+                    <li>Subscriptions automatically renew unless auto-renew is turned off at least <strong>24 hours before the end of the current period</strong>.</li>
+                    <li>Your account will be charged for renewal within 24 hours prior to the end of the current period at the selected plan's rate.</li>
+                    <li>You can manage and cancel your subscriptions by going to your <strong>App Store Account Settings</strong> after purchase.</li>
+                </ul>
+
+                <h3>3. Educational Disclaimer &amp; Intellectual Property</h3>
+                <p>WftExamen is an independent study preparation tool and is not officially affiliated with DUO, CDFD, AFM, or DNB. While all practice questions and explanations are carefully crafted to reflect current Wft exam requirements, we do not guarantee exam pass results. All content, questions, and source code are protected by copyright.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 WftExamen — Mehmet Ali Ünalan. Alle rechten voorbehouden / All rights reserved.</p>
+        <p style="margin-top: 6px;">Contact: <a href="mailto:habitview1@gmail.com" style="color: var(--accent); text-decoration: none;">habitview1@gmail.com</a></p>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const isNL = (lang === 'nl');
+            document.documentElement.lang = lang;
+
+            document.getElementById('btn-nl').classList.toggle('active', isNL);
+            document.getElementById('btn-en').classList.toggle('active', !isNL);
+
+            document.getElementById('hero-sub-nl').classList.toggle('hidden', !isNL);
+            document.getElementById('hero-sub-en').classList.toggle('hidden', isNL);
+
+            document.getElementById('nav-nl').classList.toggle('hidden', !isNL);
+            document.getElementById('nav-en').classList.toggle('hidden', isNL);
+
+            document.getElementById('content-nl').classList.toggle('hidden', !isNL);
+            document.getElementById('content-en').classList.toggle('hidden', isNL);
+        }
+    </script>
+</body>
+</html>
